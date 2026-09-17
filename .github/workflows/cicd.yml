@@ -77,5 +77,5 @@ jobs:
         run: |
           aws ecs update-service \
             --cluster nginx-cluster \
-            --service myapp-service \
+            --service nginx-task-service-nokaoksl \
             --force-new-deployment
