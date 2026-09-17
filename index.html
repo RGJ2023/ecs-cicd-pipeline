@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Cloud Engineer Resume</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background-color: #f4f4f5;
+            line-height: 1.35;
+            font-size: 9.5pt;
+        }
+
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 0.4in 0.5in;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-left h1 {
+            font-size: 18pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0f172a;
+            line-height: 1.1;
+        }
+
+        .header-left .title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2563eb;
+            margin-top: 2px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 8.5pt;
+            color: #475569;
+        }
+
+        .header-right div {
+            margin-bottom: 1px;
+        }
+
+        .header-right a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        section {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #0f172a;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 2px;
+            margin-bottom: 6px;
+        }
+
+        .summary {
+            color: #334155;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3px 12px;
+            font-size: 9pt;
+        }
+
+        .skills-category {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .skills-list {
+            color: #334155;
+        }
+
+        .job {
+            margin-bottom: 6px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 9.5pt;
+            color: #0f172a;
+        }
+
+        .job-sub {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            color: #2563eb;
+            font-size: 8.5pt;
+            margin-bottom: 3px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 14px;
+        }
+
+        li {
+            margin-bottom: 2px;
+            color: #334155;
+            text-align: justify;
+        }
+
+        li strong {
+            color: #0f172a;
+        }
+
+        .edu-project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 9pt;
+        }
+
+        .item-sub {
+            font-style: italic;
+            color: #475569;
+            font-size: 8.5pt;
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+            .page {
+                margin: 0;
+                padding: 0.35in 0.4in;
+                width: 100%;
+                height: 100vh;
+                box-shadow: none;
+            }
+            @page {
+                size: letter;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div>
+        <!-- HEADER -->
+        <header>
+            <div class="header-left">
+                <h1>DevOps Cloud Engineer</h1>
+                <div class="title">Infrastructure Automation &amp; Multi-AZ Systems Specialist</div>
+            </div>
+            <div class="header-right">
+                <div>Phone: (555) 019-2831 | Location: United States</div>
+                <div>Email: devops.engineer@email.com</div>
+                <div>LinkedIn: linkedin.com/in/devops-cloud-eng</div>
+                <div>GitHub: github.com/RGJ2023/utc-aws-infrastructure</div>
+            </div>
+        </header>
+
+        <!-- SUMMARY -->
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="summary">
+                DevOps Cloud Engineer with 6 years of hands-on experience designing, automating, and maintaining highly available, multi-AZ cloud infrastructure on AWS. Expertise in Infrastructure as Code (Terraform), container orchestration (Kubernetes, Docker), and building zero-downtime CI/CD pipelines. Proven track record in isolating workload tiers, enforcing Security Group chaining, optimizing egress traffic via NAT Gateways, and migrating stateless applications to immutable deployment models.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-category">Cloud Platforms:</div>
+                <div class="skills-list">AWS (VPC, EC2, Auto Scaling, ALB, Route 53, S3, CloudFront, EFS, RDS, IAM, Secrets Manager)</div>
+
+                <div class="skills-category">IaC & Configuration:</div>
+                <div class="skills-list">Terraform (Modular Architecture, Remote State/S3/DynamoDB), Ansible, Packer, CloudFormation</div>
+
+                <div class="skills-category">Containers & CI/CD:</div>
+                <div class="skills-list">Docker, Kubernetes (EKS), GitHub Actions, GitLab CI, Jenkins, ArgoCD</div>
+
+                <div class="skills-category">OS & Scripting:</div>
+                <div class="skills-list">Linux (Ubuntu, Debian, RHEL), Bash, Python, HCL, YAML</div>
+
+                <div class="skills-category">Security & Monitoring:</div>
+                <div class="skills-list">AWS SSM Session Manager, Security Group Chaining, CloudWatch, Prometheus, Grafana</div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section>
+            <h2>Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>Senior DevOps / Cloud Infrastructure Engineer</span>
+                    <span>2023 – Present</span>
+                </div>
+                <div class="job-sub">
+                    <span>Enterprise Cloud Services Inc.</span>
+                    <span>Remote</span>
+                </div>
+                <ul>
+                    <li><strong>Multi-AZ Infrastructure:</strong> Architected and deployed modular Terraform configurations for 3-tier VPC setups hosting Auto Scaling Groups (ASGs) across private subnets, achieving 99.99% uptime.</li>
+                    <li><strong>Security & Access Control:</strong> Replaced inbound SSH/Bastion setup with AWS Systems Manager (SSM) Session Manager and IAM Instance Profiles, reducing perimeter attack surfaces to zero inbound management ports.</li>
+                    <li><strong>Traffic Isolation & Egress:</strong> Designed zero-trust Security Group chaining (ALB &#8594; App Tier &#8594; DB) and configured private route tables with NAT Gateways for secure outbound package installation.</li>
+                    <li><strong>Zero-Downtime Deployments:</strong> Automated rolling updates and instance refreshes using AWS CLI and Auto Scaling Policies, eliminating service disruption during application upgrades.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>DevOps Engineer</span>
+                    <span>2020 – 2023</span>
+                </div>
+                <div class="job-sub">
+                    <span>TechScale Systems</span>
+                    <span>Hybrid</span>
+                </div>
+                <ul>
+                    <li><strong>CI/CD & Bootstrapping Automation:</strong> Wrote robust, non-interactive shell scripts (`DEBIAN_FRONTEND=noninteractive`) for instance bootstrapping and integrated stdout/stderr logging to `/var/log/user-data.log`.</li>
+                    <li><strong>State & Secrets Security:</strong> Scrubbed legacy repositories of tracked `.tfstate` and `.tfvars` files, migrated local states to remote S3 backends with DynamoDB locking, and automated secret injection using AWS Secrets Manager.</li>
+                    <li><strong>Containerization:</strong> Migrated legacy monolithic web applications into Docker containers, orchestrated on EKS clusters with horizontal pod autoscaling.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>Systems Administrator / Junior DevOps</span>
+                    <span>2018 – 2020</span>
+                </div>
+                <div class="job-sub">
+                    <span>DataCore Infrastructure Solutions</span>
+                    <span>On-site</span>
+                </div>
+                <ul>
+                    <li>Managed Ubuntu/CentOS server environments, maintaining system health, kernel patches, and network configurations.</li>
+                    <li>Automated routine system administration tasks using Bash scripts and Ansible playbooks, cutting manual patching effort by 60%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJECTS & EDUCATION -->
+        <div class="edu-project-grid">
+            <section>
+                <h2>Featured Project</h2>
+                <div class="item-header">
+                    <span>Multi-AZ UTC AWS Infrastructure</span>
+                    <span>Terraform</span>
+                </div>
+                <div class="item-sub">Production-Ready 3-Tier Web Stack</div>
+                <ul style="margin-left: 12px; margin-top: 3px;">
+                    <li>Built modular Terraform code deploying ALB, Auto Scaling instances across 3 private subnets, EFS volumes, and Route 53 DNS.</li>
+                    <li>Implemented strict git security controls, `.gitignore` protections, and remote state management.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Education & Certifications</h2>
+                <div class="item-header">
+                    <span>B.S. in Computer Science / Information Tech</span>
+                </div>
+                <div class="item-sub">State University</div>
+                <div style="margin-top: 4px; font-size: 8.5pt; color: #334155;">
+                    &#8226; <strong>AWS Certified Solutions Architect – Associate</strong><br>
+                    &#8226; <strong>HashiCorp Certified: Terraform Associate</strong>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
