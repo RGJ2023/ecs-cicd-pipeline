@@ -1,1 +1,14 @@
 # ecs-cicd-pipeline
+ECS Docker Build and Continuous Deployment PipelineThis repository contains a GitHub Actions workflow (.github/workflows/deploy.yml) that automates the containerization, pushing, and deployment of a Docker application to Amazon Elastic Container Registry (ECR) and Amazon Elastic Container Service (ECS).
+
+🏗️ Architecture & Workflow OverviewOn every push to the main branch, the workflow performs the following steps:OIDC Authentication: Authenticates securely to AWS using OpenID Connect (OIDC) with temporary credentials (no long-lived AWS keys required).ECR Login: Authenticates the GitHub runner to your private AWS ECR registry.Container Build: Builds the Docker image from the root Dockerfile.Dual Tagging: Tags the built image with both:Unique Git Commit SHA (${{ github.sha }}) for immutable tracking.latest tag for general deployment tracking.Image Push: Pushes both tagged images to the target AWS ECR repository.ECS Deployment: Triggers a forced new deployment on your target ECS Service (aws ecs update-service).
+
+🔑 Prerequisites & Configuration1. AWS IAM Role (OIDC Setup)Ensure you have an IAM Role configured in your AWS account with a trust policy allowing GitHub Actions to assume it via OIDC (sts:AssumeRoleWithWebIdentity).Required IAM Permissions for the Role:ecr:GetAuthorizationTokenecr:BatchCheckLayerAvailabilityecr:GetDownloadUrlForLayerecr:PutImageecr:InitiateLayerUploadecr:UploadLayerPartecr:CompleteLayerUploadecs:UpdateServiceecs:DescribeServices2. GitHub Secrets & VariablesConfigure the following values in your GitHub repository (Settings > Secrets and variables > Actions):Repository Secrets (secrets.)Secret NameDescriptionExampleAWS_ROLE_ARNIAM Role ARN assumed by GitHub Actions via OIDCarn:aws:iam::123456789012:role/GitHubActionsECSDeployRoleRepository Variables (vars.)Variable NameDescriptionExampleAWS_REGIONTarget AWS Regionus-east-1ECR_REPOSITORYAWS ECR Repository Namemy-app-repo⚙️ Environment Variables inside the WorkflowThe target ECS Cluster and Service names are defined directly inside the workflow file (.github/workflows/deploy.yml) using the top-level env: block:env:
+  ECS_CLUSTER: nginx-cluster
+  ECS_SERVICE: nginx-task-service-nokaoksl
+Note: If you need to deploy across multiple environments (e.g., staging vs. production), you can migrate these environment variables to GitHub Repository Variables (vars.ECS_CLUSTER, vars.ECS_SERVICE) or GitHub Environments.
+
+🚀 UsageTo trigger a deployment, commit and push your changes to the main branch:git add .
+git commit -m "feat: updated application code"
+git push origin main
+You can track execution progress and view logs in the Actions tab of your GitHub repository.
